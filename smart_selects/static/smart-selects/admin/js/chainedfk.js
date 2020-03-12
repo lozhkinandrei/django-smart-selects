@@ -90,12 +90,12 @@
                     // Handle the case of inlines, where the ID will depend on which list item we are dealing with
                     var prefix, start_value, this_val, localID = id;
                     if (localID.indexOf("__prefix__") > -1) {
-                        prefix = $(this).attr("id").match(/\d+/)[0];
+                        prefix = $(this).attr("id").match(/\d+/);
                         localID = localID.replace("__prefix__", prefix);
                     }
 
                     start_value = parseInt($(localID).val());
-                    this_val = parseInt($(this).val());              
+                    this_val = parseInt($(this).val());
                     fill_field(this_val, start_value, localID, url, empty_label, auto_choose);
                 });
                 if (typeof(dismissAddAnotherPopup) !== 'undefined') {
